@@ -21,8 +21,7 @@
  *   5, 5  => 25
  */
 export function getRectangleArea(width, height) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return width * height;
 }
 
 
@@ -38,8 +37,7 @@ export function getRectangleArea(width, height) {
  *   0    => 0
  */
 export function getCicleCircumference(radius) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return 2 * Math.PI * radius;
 }
 
 /**
@@ -55,8 +53,7 @@ export function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 export function getAverage(value1, value2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return value1/2 + value2/2;
 }
 
 /**
@@ -75,8 +72,9 @@ export function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 export function getDistanceBetweenPoints(x1, y1, x2, y2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Math.sqrt(
+    Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2)
+  );
 }
 
 /**
@@ -92,8 +90,7 @@ export function getDistanceBetweenPoints(x1, y1, x2, y2) {
  *   5*x = 0         => 0
  */
 export function getLinearEquationRoot(a, b) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return -b/a;
 }
 
 
@@ -116,8 +113,9 @@ export function getLinearEquationRoot(a, b) {
  *   (0,1) (1,2)     => 0
  */
 export function getAngleBetweenVectors(x1, y1, x2, y2) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Math.acos(
+    (x1 * x2 + y1 * y2) / (Math.sqrt(x1 * x1 + y1 * y1) * Math.sqrt(x2 * x2 + y2 * y2))
+  );
 }
 
 /**
@@ -133,8 +131,10 @@ export function getAngleBetweenVectors(x1, y1, x2, y2) {
  *     0     => 0
  */
 export function getLastDigit(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  const str = String(value);
+  const lastDigit = Number(str[str.length-1]);
+
+  return lastDigit;
 }
 
 
@@ -150,8 +150,7 @@ export function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 export function parseNumberFromString(value) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Number(value);
 }
 
 /**
@@ -168,8 +167,9 @@ export function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 export function getParallelipidedDiagonal(a, b, c) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  return Math.sqrt(
+    Math.pow(a, 2) + Math.pow(b, 2) + Math.pow(c, 2)
+  );
 }
 
 /**
@@ -190,8 +190,8 @@ export function getParallelipidedDiagonal(a, b, c) {
  *   1678, 3  => 2000
  */
 export function roundToPowerOfTen(num, pow) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  const power = Math.pow(10, pow);
+  return Math.round(num / power) * power;
 }
 
 /**
@@ -212,8 +212,11 @@ export function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 export function isPrime(n) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  if (n <= 3 || n === 7) return true;
+  if (!(n % 2)) return false;
+  if (!(n % 3)) return false;
+  if (!(n % 7)) return false;
+  return true;
 }
 
 /**
@@ -232,6 +235,6 @@ export function isPrime(n) {
  *   toNumber(new Number(42), 0) => 42
  */
 export function toNumber(value, def) {
-  /* implement your code here */
-  throw new Error('Not implemented');
+  const num = Number(value);
+  return Number.isFinite(num) ? num : def;
 }
